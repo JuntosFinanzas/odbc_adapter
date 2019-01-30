@@ -36,7 +36,11 @@ module ODBCAdapter
         puts "out"
 
         columns = stmt.columns
+        puts "cols"
+
         values  = stmt.to_a
+        puts "vals"
+
         stmt.drop
 
         puts "omg"
