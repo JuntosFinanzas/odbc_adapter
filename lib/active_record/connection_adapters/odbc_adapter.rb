@@ -127,6 +127,7 @@ module ActiveRecord
       # as super except that it also passes in the native type.
       # rubocop:disable Metrics/ParameterLists
       def new_column(name, default, sql_type_metadata, null, table_name, default_function = nil, collation = nil, native_type = nil)
+        puts "===== #{native_type}"
         ::ODBCAdapter::Column.new(name, default, sql_type_metadata, null, table_name, default_function, collation, native_type)
       end
 
@@ -134,6 +135,7 @@ module ActiveRecord
 
       # Build the type map for ActiveRecord
       def initialize_type_map(map)
+        puts "== initialize_type_map"
         map.register_type 'boolean',              Type::Boolean.new
         map.register_type ODBC::SQL_CHAR,         Type::String.new
         map.register_type ODBC::SQL_LONGVARCHAR,  Type::Text.new
