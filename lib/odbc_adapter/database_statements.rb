@@ -45,6 +45,8 @@ module ODBCAdapter
         stmt.maxlength = 32768
         puts stmt.maxlength
 
+        puts stmt.columns
+
 
 
         values  = stmt.to_a
