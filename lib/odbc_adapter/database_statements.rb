@@ -29,15 +29,24 @@ module ODBCAdapter
           if prepared_statements
             @connection.run(sql, *prepared_binds(binds))
           else
+            puts "run"
             @connection.run(sql)
           end
+
+        puts "out"
 
         columns = stmt.columns
         values  = stmt.to_a
         stmt.drop
 
+        puts "omg"
+
         values = dbms_type_cast(columns.values, values)
+        puts "type cast complete"
+
         column_names = columns.keys.map { |key| format_case(key) }
+        puts "col names complete"
+
         ActiveRecord::Result.new(column_names, values)
       end
     end
