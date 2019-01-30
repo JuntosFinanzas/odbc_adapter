@@ -41,11 +41,10 @@ module ODBCAdapter
         puts stmt.class
         puts stmt.inspect
 
-        puts stmt.parameters
-
-        puts stmt.param_output_value(1)
-        puts stmt.param_output_size(1, 32768)
         puts stmt.columns['smses'].inspect
+
+        # puts stmt.param_output_value(1)
+        # puts stmt.param_output_size(1, 32768)
 
         values  = stmt.to_a
         puts "vals"
