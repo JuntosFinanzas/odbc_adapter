@@ -39,14 +39,10 @@ module ODBCAdapter
         puts "cols"
 
         puts stmt.class
-        puts stmt
-        puts stmt.set_option('SQL_MAX_LENGTH', 32768)
-        puts stmt.maxlength
-        stmt.maxlength = 32768
-        puts stmt.maxlength
+        puts stmt.inspect
 
-        puts stmt.columns['smses'].inspect
-        stmt.columns['smses'].instance_variable_set(:@length, 32768)
+        puts stmt.param_output_value(2)
+        puts stmt.param_output_size(2, 32768)
         puts stmt.columns['smses'].inspect
 
         values  = stmt.to_a
