@@ -47,7 +47,7 @@ module ODBCAdapter
 
         puts stmt.columns['smses'].length
 
-        stmt.columns['smses'].length = 32768
+        stmt.columns['smses'].instance_variable_set(:@length, 32768)
         puts stmt.columns['smses'].length
 
 
