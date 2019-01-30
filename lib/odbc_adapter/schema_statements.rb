@@ -81,6 +81,12 @@ module ODBCAdapter
           args[:scale]     = col_scale || 0
           args[:precision] = col_limit
         end
+
+        if col_sql_type == ODBC::SQL_STRING
+          puts 'increating limit'
+          args[:limit] = 1024
+        end
+
         sql_type_metadata = ActiveRecord::ConnectionAdapters::SqlTypeMetadata.new(**args)
 
         cols << new_column(format_case(col_name), col_default, sql_type_metadata, col_nullable, table_name, col_native_type)
