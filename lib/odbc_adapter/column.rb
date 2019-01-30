@@ -7,6 +7,9 @@ module ODBCAdapter
     # rubocop:disable Metrics/ParameterLists
     def initialize(name, default, sql_type_metadata = nil, null = true, table_name = nil, native_type = nil, default_function = nil, collation = nil)
       super(name, default, sql_type_metadata, null, table_name, default_function, collation)
+
+      puts "===== #{native_type}"
+
       @native_type = native_type
     end
   end
