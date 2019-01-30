@@ -38,6 +38,8 @@ module ODBCAdapter
         columns = stmt.columns
         puts "cols"
 
+        puts stmt.class
+        puts stmt
         values  = stmt.to_a
         puts "vals"
 
