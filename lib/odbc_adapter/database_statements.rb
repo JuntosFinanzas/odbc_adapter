@@ -45,11 +45,9 @@ module ODBCAdapter
         stmt.maxlength = 32768
         puts stmt.maxlength
 
-        puts stmt.columns['smses'].length
-
+        puts stmt.columns['smses']
         stmt.columns['smses'].instance_variable_set(:@length, 32768)
-        puts stmt.columns['smses'].length
-
+        puts stmt.columns['smses']
 
         values  = stmt.to_a
         puts "vals"
