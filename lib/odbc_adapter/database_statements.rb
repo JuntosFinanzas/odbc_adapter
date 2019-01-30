@@ -40,8 +40,13 @@ module ODBCAdapter
 
         puts stmt.class
         puts stmt
+        puts stmt.set_option('SQL_MAX_LENGTH', 32768)
         puts stmt.maxlength
-        # SQL_MAX_LENGTH
+        stmt.maxlength = 32768
+        puts stmt.maxlength
+
+
+
         values  = stmt.to_a
         puts "vals"
 
