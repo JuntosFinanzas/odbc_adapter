@@ -82,7 +82,7 @@ module ODBCAdapter
           args[:precision] = col_limit
         end
 
-        if col_sql_type == ODBC::SQL_STRING
+        if col_sql_type == ODBC::SQL_VARCHAR
           puts 'increating limit'
           args[:limit] = 1024
         end
